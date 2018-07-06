@@ -680,6 +680,7 @@ extern const struct language_defn objc_language_defn;
 extern const struct language_defn opencl_language_defn;
 extern const struct language_defn pascal_language_defn;
 extern const struct language_defn rust_language_defn;
+extern const struct language_defn cforall_language_defn;
 
 /* Save the current language and restore it upon destruction.  */
 

@@ -93,6 +93,7 @@ static const struct language_defn *languages[] = {
   &c_language_defn,
   &objc_language_defn,
   &cplus_language_defn,
+  &cforall_language_defn,
   &d_language_defn,
   &go_language_defn,
   &f_language_defn,
