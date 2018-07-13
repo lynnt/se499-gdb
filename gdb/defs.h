@@ -207,6 +207,7 @@ enum language
     language_c,			/* C */
     language_objc,		/* Objective-C */
     language_cplus,		/* C++ */
+    language_cforall,	/* Cforall */
     language_d,			/* D */
     language_go,		/* Go */
     language_fortran,		/* Fortran */

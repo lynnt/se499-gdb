@@ -622,7 +622,9 @@ symbol_set_demangled_name (struct general_symbol_info *gsymbol,
 	}
     }
   else
+  {
     gsymbol->language_specific.demangled_name = name;
+  }
 }
 
 /* Return the demangled name of GSYMBOL.  */
@@ -652,6 +654,7 @@ symbol_set_language (struct general_symbol_info *gsymbol,
   gsymbol->language = language;
   if (gsymbol->language == language_cplus
       || gsymbol->language == language_d
+      || gsymbol->language == language_cforall
       || gsymbol->language == language_go
       || gsymbol->language == language_objc
       || gsymbol->language == language_fortran)
@@ -894,6 +897,7 @@ symbol_natural_name (const struct general_symbol_info *gsymbol)
   switch (gsymbol->language)
     {
     case language_cplus:
+    case language_cforall:
     case language_d:
     case language_go:
     case language_objc:
@@ -920,6 +924,7 @@ symbol_demangled_name (const struct general_symbol_info *gsymbol)
   switch (gsymbol->language)
     {
     case language_cplus:
+    case language_cforall:
     case language_d:
     case language_go:
     case language_objc:
@@ -1841,6 +1846,12 @@ demangle_for_lookup (const char *name, enum language lang,
   else if (lang == language_d)
     {
       char *demangled_name = d_demangle (name, 0);
+      if (demangled_name != NULL)
+	return storage.set_malloc_ptr (demangled_name);
+    }
+  else if (lang == language_cforall)
+    {
+      char *demangled_name = cforall_demangle (name, 0);
       if (demangled_name != NULL)
 	return storage.set_malloc_ptr (demangled_name);
     }

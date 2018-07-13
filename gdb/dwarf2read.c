@@ -8583,7 +8583,7 @@ scan_partial_symbols (struct partial_die_info *first_die, CORE_ADDR *lowpc,
 		  add_partial_symbol (pdi, cu);
 		}
 	      if ((cu->language == language_rust
-		   || cu->language == language_cplus) && pdi->has_children)
+		   || cu->language == language_cplus || cu->language == language_cforall) && pdi->has_children)
 		scan_partial_symbols (pdi->die_child, lowpc, highpc,
 				      set_addrmap, cu);
 	      break;
@@ -19704,6 +19704,9 @@ set_cu_language (unsigned int lang, struct dwarf2_cu *cu)
     case DW_LANG_Rust:
     case DW_LANG_Rust_old:
       cu->language = language_rust;
+      break;
+    case DW_LANG_CForAll:
+      cu->language = language_cforall;
       break;
     case DW_LANG_Cobol74:
     case DW_LANG_Cobol85:

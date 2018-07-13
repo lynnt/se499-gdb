@@ -2377,6 +2377,7 @@ read_and_display_attr_value (unsigned long           attribute,
 	case DW_LANG_Fortran03:		printf ("(Fortran 03)"); break;
 	case DW_LANG_Fortran08:		printf ("(Fortran 08)"); break;
 	case DW_LANG_RenderScript:	printf ("(RenderScript)"); break;
+	case DW_LANG_CForAll:		printf ("(CForAll)"); break;
 	  /* MIPS extension.  */
 	case DW_LANG_Mips_Assembler:	printf ("(MIPS assembler)"); break;
 	  /* UPC extension.  */

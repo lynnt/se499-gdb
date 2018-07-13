@@ -367,6 +367,7 @@ enum dwarf_source_language
     DW_LANG_Fortran03 = 0x0022,
     DW_LANG_Fortran08 = 0x0023,
     DW_LANG_RenderScript = 0x0024,
+    DW_LANG_CForAll = 0x0025,
 
     DW_LANG_lo_user = 0x8000,	/* Implementation-defined range start.  */
     DW_LANG_hi_user = 0xffff,	/* Implementation-defined range start.  */

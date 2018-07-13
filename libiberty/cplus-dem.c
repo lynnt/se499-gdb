@@ -328,6 +328,12 @@ const struct demangler_engine libiberty_demanglers[] =
   }
   ,
   {
+    CFORALL_DEMANGLING_STYLE_STRING,
+    cforall_demangling,
+    "Cforall style demangling"
+  }
+  ,
+  {
     NULL, unknown_demangling, NULL
   }
 };
@@ -913,6 +919,14 @@ cplus_demangle (const char *mangled, int options)
       ret = dlang_demangle (mangled, options);
       if (ret)
 	return ret;
+    }
+
+  if (CFORALL_DEMANGLING)
+    {
+      ret = cforall_demangle (mangled, options);
+      if (ret) {
+        return ret;
+      }
     }
 
   ret = internal_cplus_demangle (work, mangled);
