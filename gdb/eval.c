@@ -973,7 +973,7 @@ evaluate_funcall (type *expect_type, expression *exp, int *pos,
     }
   else if (op == OP_SCOPE
 	   && overload_resolution
-	   && (exp->language_defn->la_language == language_cplus))
+	   && (exp->language_defn->la_language == language_cplus || exp->language_defn->la_language == language_cforall))
     {
       /* Unpack it locally so we can properly handle overload
 	 resolution.  */
@@ -1035,7 +1035,7 @@ evaluate_funcall (type *expect_type, expression *exp, int *pos,
       /* If this is a C++ function wait until overload resolution.  */
       if (op == OP_VAR_VALUE
 	  && overload_resolution
-	  && (exp->language_defn->la_language == language_cplus))
+	  && (exp->language_defn->la_language == language_cplus || exp->language_defn->la_language == language_cforall))
 	{
 	  (*pos) += 4; /* Skip the evaluation of the symbol.  */
 	  argvec[0] = NULL;
@@ -1126,7 +1126,7 @@ evaluate_funcall (type *expect_type, expression *exp, int *pos,
 	tstr = function_name;
 
       if (overload_resolution && (exp->language_defn->la_language
-				  == language_cplus))
+				  == language_cplus || exp->language_defn->la_language == language_cforall))
 	{
 	  /* Language is C++, do some overload resolution before
 	     evaluation.  */
@@ -1189,7 +1189,7 @@ evaluate_funcall (type *expect_type, expression *exp, int *pos,
 	 fields that are expected here.  */
 
       if (overload_resolution && (exp->language_defn->la_language
-				  == language_cplus))
+				  == language_cplus || exp->language_defn->la_language == language_cforall))
 	{
 	  /* Language is C++, do some overload resolution before
 	     evaluation.  */
