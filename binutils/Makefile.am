@@ -161,7 +161,7 @@ BFDLIB = ../bfd/libbfd.la
 
 OPCODES = ../opcodes/libopcodes.la
 
-LIBIBERTY = ../libiberty/libiberty.a
+LIBIBERTY = ../libiberty/libiberty.a ../libdemangle.a
 
 POTFILES = $(CFILES) $(DEBUG_SRCS) $(HFILES)
 po/POTFILES.in: @MAINT@ Makefile
@@ -231,6 +231,28 @@ bfdtest2_DEPENDENCIES =  $(LIBINTL_DEP) $(LIBIBERTY) $(BFDLIB)
 LDADD = $(BFDLIB) $(LIBIBERTY) $(LIBINTL)
 
 size_SOURCES = size.c $(BULIBS)
+
+nodist_EXTRA_nm_new_SOURCES = dummy.cpp
+nodist_EXTRA_ar_SOURCES = dummy.cpp
+nodist_EXTRA_strings_SOURCES = dummy.cpp
+nodist_EXTRA_strip_new_SOURCES = dummy.cpp
+nodist_EXTRA_ranlib_SOURCES = dummy.cpp
+nodist_EXTRA_cxxfilt_SOURCES = dummy.cpp
+nodist_EXTRA_objcopy_SOURCES = dummy.cpp
+nodist_EXTRA_srconv_SOURCES = dummy.cpp
+nodist_EXTRA_sysdump_SOURCES = dummy.cpp
+nodist_EXTRA_coffdump_SOURCES = dummy.cpp
+nodist_EXTRA_dlltool_SOURCES = dummy.cpp
+nodist_EXTRA_windres_SOURCES = dummy.cpp
+nodist_EXTRA_windmc_SOURCES = dummy.cpp
+nodist_EXTRA_addr2line_SOURCES = dummy.cpp
+nodist_EXTRA_readelf_SOURCES = dummy.cpp
+nodist_EXTRA_elfedit_SOURCES = dummy.cpp
+nodist_EXTRA_dllwrap_SOURCES = dummy.cpp
+nodist_EXTRA_bfdtest1_SOURCES = dummy.cpp
+nodist_EXTRA_bfdtest2_SOURCES = dummy.cpp
+nodist_EXTRA_objdump_SOURCES = dummy.cpp
+nodist_EXTRA_size_SOURCES = dummy.cpp
 
 objcopy_SOURCES = objcopy.c not-strip.c rename.c $(WRITE_DEBUG_SRCS) $(BULIBS)
 

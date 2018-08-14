@@ -31,6 +31,7 @@ dnl the automake PACKAGE and VERSION macros.  We don't name it
 dnl config.h, to avoid any possible confusion with the bfd config.h.
 AC_CONFIG_HEADERS([gconfig.h:gconfig.in])
 
+AC_PROG_CXX
 AC_PROG_CC
 AC_GNU_SOURCE
 AC_USE_SYSTEM_EXTENSIONS

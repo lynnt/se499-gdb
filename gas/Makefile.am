@@ -91,7 +91,8 @@ GAS_CFILES = \
 	stabs.c \
 	subsegs.c \
 	symbols.c \
-	write.c
+	write.c \
+	dummy.cpp
 
 CFILES = $(GAS_CFILES) itbl-ops.c cgen.c
 
@@ -388,7 +389,7 @@ AM_CPPFLAGS = -I. -I$(srcdir) -I../bfd -I$(srcdir)/config \
 # How to link with both our special library facilities
 # and the system's installed libraries.
 
-GASLIBS = @OPCODES_LIB@ ../bfd/libbfd.la ../libiberty/libiberty.a
+GASLIBS = @OPCODES_LIB@ ../bfd/libbfd.la ../libiberty/libiberty.a ../libdemangle.a
 
 # Files to be copied away after each stage in building.
 STAGESTUFF = *.@OBJEXT@ $(noinst_PROGRAMS)

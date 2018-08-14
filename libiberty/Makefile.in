@@ -126,7 +126,6 @@ CFILES = alloca.c argv.c asprintf.c atexit.c				\
 	basename.c bcmp.c bcopy.c bsearch.c bzero.c			\
 	calloc.c choose-temp.c clock.c concat.c cp-demangle.c		\
 	 cp-demint.c cplus-dem.c crc32.c				\
-	cforall-demangle.c							\
 	d-demangle.c dwarfnames.c dyn-string.c				\
 	fdmatch.c ffs.c fibheap.c filename_cmp.c floatformat.c		\
 	fnmatch.c fopen_unlocked.c					\
@@ -168,7 +167,6 @@ REQUIRED_OFILES =							\
 	./regex.$(objext) ./cplus-dem.$(objext) ./cp-demangle.$(objext) \
 	./md5.$(objext) ./sha1.$(objext) ./alloca.$(objext)		\
 	./argv.$(objext)						\
-	./cforall-demangle.$(objext)					\
 	./choose-temp.$(objext) ./concat.$(objext)			\
 	./cp-demint.$(objext) ./crc32.$(objext) ./d-demangle.$(objext)	\
 	./dwarfnames.$(objext) ./dyn-string.$(objext)			\
@@ -616,18 +614,6 @@ $(CONFIGURED_OFILES): stamp-picdir stamp-noasandir
 	  $(COMPILE.c) $(PICFLAG) $(NOASANFLAG) $(srcdir)/calloc.c -o noasan/$@; \
 	else true; fi
 	$(COMPILE.c) $(srcdir)/calloc.c $(OUTPUT_OPTION)
-
-./cforall-demangle.$(objext): $(srcdir)/cforall-demangle.c config.h \
-	$(INCDIR)/ansidecl.h $(INCDIR)/demangle.h $(INCDIR)/libiberty.h \
-	$(INCDIR)/safe-ctype.h
-	if [ x"$(PICFLAG)" != x ]; then \
-	  $(COMPILE.c) $(PICFLAG) $(srcdir)/cforall-demangle.c -o pic/$@; \
-	else true; fi
-	if [ x"$(NOASANFLAG)" != x ]; then \
-	  $(COMPILE.c) $(PICFLAG) $(NOASANFLAG) $(srcdir)/cforall-demangle.c -o noasan/$@; \
-	else true; fi
-	$(COMPILE.c) $(srcdir)/cforall-demangle.c $(OUTPUT_OPTION)
-
 
 ./choose-temp.$(objext): $(srcdir)/choose-temp.c config.h $(INCDIR)/ansidecl.h \
 	$(INCDIR)/libiberty.h

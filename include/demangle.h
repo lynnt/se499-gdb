@@ -183,8 +183,8 @@ ada_demangle (const char *mangled, int options);
 extern char *
 dlang_demangle (const char *mangled, int options);
 
-extern char *
-cforall_demangle (const char *mangled, int options);
+char *
+cforall_demangle (const char *mangled);
 
 /* Returns non-zero iff MANGLED is a rust mangled symbol.  MANGLED must
    already have been demangled through cplus_demangle_v3.  If this function

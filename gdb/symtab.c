@@ -1851,7 +1851,7 @@ demangle_for_lookup (const char *name, enum language lang,
     }
   else if (lang == language_cforall)
     {
-      char *demangled_name = cforall_demangle (name, 0);
+      char *demangled_name = cforall_demangle (name);
       if (demangled_name != NULL)
 	return storage.set_malloc_ptr (demangled_name);
     }

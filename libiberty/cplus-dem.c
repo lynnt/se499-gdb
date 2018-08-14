@@ -923,7 +923,7 @@ cplus_demangle (const char *mangled, int options)
 
   if (CFORALL_DEMANGLING)
     {
-      ret = cforall_demangle (mangled, options);
+      ret = cforall_demangle (mangled);
       if (ret) {
         return ret;
       }
