@@ -81,43 +81,10 @@ cforall_sniff_from_mangled_name (const char *mangled, char **demangled)
     return *demangled != NULL;
 }
 
-/* Impforallementation of la_lookup_symbol_nonlocal for CFA.  */
-/*
-static struct block_symbol
-cforall_lookup_symbol_nonlocal (const struct language_defn *langdef,
-			     const char *name,
-			     const struct block *block,
-			     const domain_enum domain)
-{
-    printf("HELLO from cforall_lookup_symbol_nonlocal: %s\n", name);
-  struct block_symbol result = {NULL, NULL};
-  result = lookup_symbol_in_static_block (name, block, domain);
-  if (result.symbol != NULL)
-      return result;
-
-  if (domain == VAR_DOMAIN)
-  {
-      struct gdbarch *gdbarch;
-
-      if (block == NULL)
-          gdbarch = target_gdbarch();
-      else
-          gdbarch = block_gdbarch(block);
-      result.symbol = language_lookup_primitive_type_as_symbol (langdef, gdbarch, name);
-      result.block = NULL;
-      if (result.symbol != NULL)
-          return result;
-  }
-
-  result = lookup_global_symbol (name, block, domain);
-    return result;
-}
-*/
-
 extern const struct language_defn cforall_language_defn =
 {
-  "cforall",				/* Language name */
-  "CForAll",                /* Natural name */
+  "cforall",			/* Language name */
+  "CForAll",                	/* Natural name */
   language_cforall,
   range_check_off,
   case_sensitive_on,

@@ -47,7 +47,6 @@
 #include "block.h"
 #include "dictionary.h"
 
-#include <assert.h>
 #include <sys/types.h>
 #include <fcntl.h>
 #include <sys/stat.h>

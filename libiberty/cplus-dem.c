@@ -44,7 +44,6 @@ Boston, MA 02110-1301, USA.  */
 
 #include "safe-ctype.h"
 
-#include <assert.h>
 #include <sys/types.h>
 #include <string.h>
 #include <stdio.h>
