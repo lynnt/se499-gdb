@@ -44,6 +44,7 @@ Boston, MA 02110-1301, USA.  */
 
 #include "safe-ctype.h"
 
+#include <assert.h>
 #include <sys/types.h>
 #include <string.h>
 #include <stdio.h>
@@ -923,7 +924,7 @@ cplus_demangle (const char *mangled, int options)
 
   if (CFORALL_DEMANGLING)
     {
-      ret = cforall_demangle (mangled);
+      ret = cforall_demangle (mangled, options);
       if (ret) {
         return ret;
       }

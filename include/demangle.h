@@ -64,7 +64,7 @@ extern "C" {
 #define DMGL_GNAT	 (1 << 15)
 #define DMGL_DLANG	 (1 << 16)
 #define DMGL_RUST	 (1 << 17)	/* Rust wraps GNU_V3 style mangling.  */
-#define DMGL_CFORALL (1 << 18)
+#define DMGL_CFORALL 	 (1 << 18)
 
 /* If none of these are set, use 'current_demangling_style' as the default. */
 #define DMGL_STYLE_MASK (DMGL_AUTO|DMGL_GNU|DMGL_LUCID|DMGL_ARM|DMGL_HP|DMGL_EDG|DMGL_GNU_V3|DMGL_JAVA|DMGL_GNAT|DMGL_DLANG|DMGL_RUST|DMGL_CFORALL)
@@ -184,7 +184,7 @@ extern char *
 dlang_demangle (const char *mangled, int options);
 
 char *
-cforall_demangle (const char *mangled);
+cforall_demangle (const char *mangled, int options);
 
 /* Returns non-zero iff MANGLED is a rust mangled symbol.  MANGLED must
    already have been demangled through cplus_demangle_v3.  If this function

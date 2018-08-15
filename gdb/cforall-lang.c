@@ -77,7 +77,7 @@ static const char *cforall_extensions[] =
 static int
 cforall_sniff_from_mangled_name (const char *mangled, char **demangled)
 {
-    *demangled = gdb_demangle(mangled, 0 | DMGL_CFORALL);
+    *demangled = cforall_demangle(mangled, 0);
     return *demangled != NULL;
 }
 
@@ -140,9 +140,9 @@ extern const struct language_defn cforall_language_defn =
   true,				/* la_store_sym_names_in_linkage_form_p */
   cp_lookup_symbol_nonlocal,	/* lookup_symbol_nonlocal */
   basic_lookup_transparent_type,/* lookup_transparent_type */
-  gdb_demangle,				/* Language specific symbol demangler */
+  cforall_demangle,		/* Language specific symbol demangler */
   cforall_sniff_from_mangled_name,
-  NULL,				/* Language specific
+  NULL,				/* Language specifn
 				   class_name_from_physname */
   c_op_print_tab,		/* expression operators for printing */
   1,				/* c-style arrays */
