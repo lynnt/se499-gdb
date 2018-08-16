@@ -947,7 +947,6 @@ COMMON_SFILES = \
 	c-typeprint.c \
 	c-valprint.c \
 	c-varobj.c \
-	cforall-lang.c \
 	charset.c \
 	cli-out.c \
 	coff-pe-read.c \

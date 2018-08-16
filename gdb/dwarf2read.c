@@ -19706,7 +19706,7 @@ set_cu_language (unsigned int lang, struct dwarf2_cu *cu)
       cu->language = language_rust;
       break;
     case DW_LANG_CForAll:
-      cu->language = language_cforall;
+      //cu->language = language_cforall;
       break;
     case DW_LANG_Cobol74:
     case DW_LANG_Cobol85:

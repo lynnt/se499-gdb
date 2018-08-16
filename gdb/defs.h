@@ -217,7 +217,6 @@ enum language
     language_rust,		/* Rust */
     language_minimal,		/* All other languages, minimal support only */
     language_ada,		/* Ada */
-    language_cforall,		/* Cforall */
     nr_languages
   };
 

@@ -92,7 +92,6 @@ extern enum demangling_styles
   gnat_demangling = DMGL_GNAT,
   dlang_demangling = DMGL_DLANG,
   rust_demangling = DMGL_RUST,
-  cforall_demangling = DMGL_CFORALL
 } current_demangling_style;
 
 /* Define string names for the various demangling styles. */
@@ -109,7 +108,6 @@ extern enum demangling_styles
 #define GNAT_DEMANGLING_STYLE_STRING          "gnat"
 #define DLANG_DEMANGLING_STYLE_STRING         "dlang"
 #define RUST_DEMANGLING_STYLE_STRING          "rust"
-#define CFORALL_DEMANGLING_STYLE_STRING          "cforall"
 
 /* Some macros to test what demangling style is active. */
 
