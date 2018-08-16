@@ -101,6 +101,7 @@ static const struct language_defn *languages[] = {
   &pascal_language_defn,
   &opencl_language_defn,
   &rust_language_defn,
+  &cforall_language_defn,
   &minimal_language_defn,
   &ada_language_defn,
 };

@@ -215,6 +215,7 @@ enum language
     language_pascal,		/* Pascal */
     language_opencl,		/* OpenCL */
     language_rust,		/* Rust */
+    language_cforall,		/* CforAll */
     language_minimal,		/* All other languages, minimal support only */
     language_ada,		/* Ada */
     nr_languages
