@@ -1924,6 +1924,7 @@ case ${host} in
 esac
 AC_SUBST(WIN32LIBS)
 
+AC_LANG_CPLUSPLUS
 # Add ELF support to GDB, but only if BFD includes ELF support.
 GDB_AC_CHECK_BFD([for ELF support in BFD], gdb_cv_var_elf,
                  [bfd_get_elf_phdr_upper_bound (NULL)], elf-bfd.h)

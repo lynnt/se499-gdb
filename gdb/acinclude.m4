@@ -340,17 +340,17 @@ dnl CODE is some code to compile that checks for the feature.
 dnl A link test is run.
 dnl HEADER is the name of an extra BFD header to include.
 AC_DEFUN([GDB_AC_CHECK_BFD], [
-  OLD_CFLAGS=$CFLAGS
+  OLD_CXXFLAGS=$CXXFLAGS
   OLD_LDFLAGS=$LDFLAGS
   OLD_LIBS=$LIBS
   # Put the old CFLAGS/LDFLAGS last, in case the user's (C|LD)FLAGS
   # points somewhere with bfd, with -I/foo/lib and -L/foo/lib.  We
   # always want our bfd.
-  CFLAGS="-I${srcdir}/../include -I../bfd -I${srcdir}/../bfd $CFLAGS"
+  CXXFLAGS="-I${srcdir}/../include -I../bfd -I${srcdir}/../bfd $CXXFLAGS"
   ZLIBDIR=`echo $zlibdir | sed 's,\$(top_builddir)/,,g'`
-  LDFLAGS="-L../bfd -L../libiberty $ZLIBDIR $LDFLAGS"
+  LDFLAGS=" -L../bfd -L../libiberty -L.. $ZLIBDIR $LDFLAGS"
   intl=`echo $LIBINTL | sed 's,${top_builddir}/,,g'`
-  LIBS="-lbfd -liberty -lz $intl $LIBS"
+  LIBS="-lbfd -liberty -lz -ldemangle $intl $LIBS"
   AC_CACHE_CHECK([$1], [$2],
   [AC_TRY_LINK(
   [#include <stdlib.h>
@@ -358,7 +358,7 @@ AC_DEFUN([GDB_AC_CHECK_BFD], [
   #include "$4"
   ],
   [return $3;], [[$2]=yes], [[$2]=no])])
-  CFLAGS=$OLD_CFLAGS
+  CXXFLAGS=$OLD_CXXFLAGS
   LDFLAGS=$OLD_LDFLAGS
   LIBS=$OLD_LIBS])
 
