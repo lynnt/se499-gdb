@@ -1,0 +1,8 @@
+### UPDATING LIBDEMANGLE LIB LOCATION
+* The location of libdemangle can be changed by updating all the Makefile that contains either these keywords
+`libdemangle.a` and `ldemangle`
+* Additionally, when one runs `configure`, the LDFLAGS should point to the directory that contains the library
+
+### BUILD CFA DEMANGLER
+* To get CFA demangler built, a copy of `libdemangle.a` should be included in the top level directory.
+* Then run `./configure 'LDFLAGS=-L<path_of_libdemangle>' 'CC=gcc-6'`
